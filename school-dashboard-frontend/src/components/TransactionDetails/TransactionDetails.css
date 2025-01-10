@@ -1,0 +1,83 @@
+.transaction-details-wrapper {
+  min-height: 100vh;
+  background: rgb(206, 206, 206);
+  padding: 16px;
+  margin-top: 60px;
+}
+
+.transaction-details-wrapper h2 {
+  font-family: "Arial";
+  margin-bottom: 16px;
+}
+
+.transaction-details-dropdown {
+  padding: 12px 16px;
+  width: 260px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.select-school-id-text {
+  background: rgb(26, 118, 255);
+  color: #ffffff;
+}
+
+.transaction-details-table-container {
+  min-height: 100vh;
+}
+
+.transaction-details-no-results-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.dash-board-table-rows-container {
+  transform: scale(1.01);
+}
+
+.transaction-details-no-results-container h2 {
+  font-family: "Arial";
+  color: rgb(126, 126, 126);
+}
+
+@media (max-width: 1024px) {
+  .transaction-details-wrapper {
+    padding: 18px 8px;
+  }
+
+  .transaction-details-dropdown {
+    margin-bottom: 18px;
+  }
+}
+
+.dark-theme-details {
+  background: rgb(31, 31, 31);
+  color: rgb(255, 255, 255);
+}
+
+.light-theme-details {
+  background: rgb(219, 219, 219);
+  color: rgb(15, 15, 15);
+}
+
+.dark-text-details {
+  color: #000000;
+}
+
+.light-text-details {
+  color: #ffffff;
+}
+
+.dark-table-header {
+  background: rgb(187, 187, 187);
+  color: rgb(10, 10, 10);
+}
+
+.light-table-header {
+  background: rgb(94, 94, 94);
+  color: #ffffff;
+}

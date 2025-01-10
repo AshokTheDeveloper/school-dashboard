@@ -1,0 +1,32 @@
+GET http://localhost:3009/school-dashboard/transactions
+
+
+###
+POST http://localhost:3009/school-dashboard/add-transaction
+Content-Type: application/json
+
+{
+    "_id":  "6730d9b926c65c39b0ee0149",
+   "school_id": "67308b27e9bbcdf5f22d24c1",
+   "trustee_id": "66505181ca3e97e19f142076",
+   "gateway": "CASHFREE",
+   "order_amount": 10000,
+   "custom_order_id": "test1"
+}
+
+###
+POST http://localhost:3009/school-dashboard/add-status
+Content-Type: application/json
+
+{
+      "collect_id": "6730d9b926c65c39b0ee0149",
+      "status": "SUCCESS",
+      "payment_method": "upi",
+      "gateway": "CASHFREE",
+      "transaction_amount": 10100,
+      "bank_refrence": "YESBNK221"
+}
+
+
+###
+GET http://localhost:3009/school-dashboard/check-status/123456789

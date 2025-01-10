@@ -1,0 +1,237 @@
+.dash-board-bg-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  min-height: 100vh;
+  background: rgb(124, 124, 124);
+  padding: 16px 32px;
+}
+
+/* -------- Dashboard top section ----------- */
+.dash-board-top-section-container {
+  width: 100%;
+}
+
+.navigation-and-button-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ------------------ search and dropdown ---------------------- */
+
+.dash-board-input-search-and-dropdown-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-and-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgb(255, 254, 254);
+  border-radius: 4px;
+  height: 40px;
+  width: 200px;
+  margin-bottom: 12px;
+}
+
+.search-and-filter-container input {
+  padding: 10px 16px;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .dash-board-top-section-container {
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+  .dash-board-input-search-and-dropdown-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .search-and-filter-container {
+    gap: 8px;
+    border-radius: 4px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 12px;
+    background: #ffffff;
+  }
+
+  .search-and-filter-container input {
+    height: 40px;
+  }
+}
+
+.dash-board-icons {
+  color: rgb(49, 49, 49);
+}
+
+.search-and-filter-container p {
+  color: rgb(49, 49, 49);
+  font-family: "Arial";
+  font-size: 14px;
+}
+
+.dash-bard-dropdowns-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.dash-bard-dropdowns-container select {
+  width: 140px;
+  padding: 12px 16px;
+  background: rgb(255, 255, 255);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.placeholder {
+  color: hsl(212, 100%, 55.5%);
+  background: rgb(152, 203, 252);
+}
+
+/* ----------------- Date Range ------------------- */
+.date-range-container {
+  display: flex;
+  align-items: center;
+  background: hsl(0, 0%, 100%);
+  border-radius: 4px;
+}
+
+.date-range-container input {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: "Arial";
+  font-size: 14px;
+  padding: 12px 12px;
+  width: 140px;
+  cursor: pointer;
+}
+
+.date-range-container button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.date-range-container .date-search-icon {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 768px) {
+  .dash-bard-dropdowns-container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .date-range-container {
+    width: 100%;
+  }
+
+  .date-range-container input {
+    width: 100%;
+  }
+
+  .dash-bard-dropdowns-container select {
+    width: 100%;
+  }
+}
+
+/* ----------- Rows per page ---------------- */
+.dash-board-rows-count-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.dash-board-rows-count-container p {
+  font-family: "Arial";
+  font-size: 14px;
+}
+
+.dash-board-rows-count-container .rows-count {
+  border: 1px solid rgb(247, 247, 247);
+  padding: 6px 24px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .dash-board-rows-count-container {
+    display: none;
+  }
+}
+
+/* ------------- Dashboard table ----------------- */
+.dash-board-table-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px;
+}
+
+.dash-board-table-header {
+  display: grid;
+  grid-template-columns: 60px 120px 220px 260px 120px 120px 120px 120px 100px;
+  background: rgb(221, 221, 221);
+  padding: 12px 8px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .dash-board-table-container {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .dash-board-table-header {
+    display: none;
+  }
+}
+
+.dash-board-table-header p {
+  font-size: 13px;
+  font-family: "Arial";
+  /* font-weight: 600; */
+}
+
+.dash-board-table-rows-container {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* ----------- Theme ------------ */
+.dark-theme {
+  background: rgb(34, 34, 34);
+  color: #ffffff;
+}
+
+.light-theme {
+  background: rgb(196, 196, 196);
+  color: #272727;
+}
+
+.dark-table-header {
+  background: rgb(187, 187, 187);
+  color:rgb(10, 10, 10);
+}
+
+.light-table-header {
+  background: rgb(94, 94, 94);
+  color: #ffffff;
+}

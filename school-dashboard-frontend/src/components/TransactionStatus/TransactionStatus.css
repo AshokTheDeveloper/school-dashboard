@@ -1,0 +1,106 @@
+.transaction-status-wrapper {
+  min-height: 100vh;
+  margin-top: 60px;
+}
+
+.transaction-status-container {
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.transaction-status-container h2 {
+  font-family: "Arial";
+  margin-bottom: 24px;
+}
+
+.transaction-status-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+  height: 40px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  background: #ffffff;
+}
+
+.transaction-status-form input {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  height: 40px;
+  width: 340px;
+  font-size: 14px;
+}
+
+.transaction-status-form button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.transaction-status-form .status-check-search-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.status-search-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.status-search-results h2 {
+  font-family: "Arial";
+  color: rgb(129, 129, 129);
+}
+
+.status-result-table-container {
+  height: 400px;
+  padding: 0 16px;
+}
+
+@media (max-width: 768px) {
+  .transaction-status-wrapper {
+    padding: 18px;
+  }
+
+  .transaction-status-form {
+    margin-bottom: 18px;
+  }
+
+  .transaction-status-container h2 {
+    font-size: 14px;
+  }
+
+  .status-search-results h2 {
+    font-size: 14px;
+  }
+
+  .transaction-status-container {
+    padding: 16px 0;
+  }
+}
+
+/* ------------ Theme --------------- */
+.dark-text-details {
+  color: #000000;
+}
+
+.light-text-details {
+  color: #ffffff;
+}
+
+.dark-table-header {
+  background: rgb(187, 187, 187);
+  color: rgb(10, 10, 10);
+}
+
+.light-table-header {
+  background: rgb(94, 94, 94);
+  color: #ffffff;
+}

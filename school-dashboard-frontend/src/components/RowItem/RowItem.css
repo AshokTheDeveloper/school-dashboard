@@ -1,0 +1,217 @@
+.row-item-container {
+  display: grid;
+  grid-template-columns: 60px 120px 220px 260px 120px 120px 120px 120px 120px;
+  padding: 12px 8px;
+  background: #ffffff;
+  margin-bottom: 2px;
+  border-radius: 6px;
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 300ms ease;
+  transform: scale(0.99);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.row-item-container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add shadow for a popup effect */
+  margin-bottom: 4px;
+}
+
+.row-item-container p {
+  font-family: "Arial";
+  font-size: 14px;
+  font-weight: 00;
+  transition: font-weight;
+}
+
+.row-item-container:hover p {
+  font-weight: 600;
+}
+
+.row-item-container .status-pending {
+  font-weight: 600;
+  color: rgb(253, 159, 37);
+}
+
+.row-item-container .status-success {
+  font-weight: 600;
+  color: rgb(14, 138, 2);
+}
+
+.row-item-container .status-failed {
+  font-weight: 600;
+  color: rgb(255, 8, 0);
+}
+
+@media (max-width: 1024px) {
+  .row-item-container {
+    grid-template-columns: auto;
+    display: none;
+  }
+}
+
+.row-item-container-mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .row-item-container-mobile {
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    margin-bottom: 8px;
+    padding: 32px 16px;
+    border-radius: 8px;
+    transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1),
+      box-shadow 300ms ease;
+    transform: scale(0.99);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .row-item-container-mobile:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add shadow for a popup effect */
+    margin-bottom: 4px;
+  }
+
+  .row-item-container-mobile p span {
+    color: #000000;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+
+  .row-item-container-mobile p {
+    font-family: "Arial";
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .row-item-container-mobile .status-success {
+    font-weight: 600;
+    color: rgb(14, 138, 2);
+  }
+
+  .row-item-container-mobile .status-pending {
+    font-weight: 600;
+    color: rgb(253, 159, 37);
+  }
+
+  .row-item-container-mobile .status-failure {
+    font-weight: 600;
+    color: rgb(255, 8, 0);
+  }
+}
+
+@media (max-width: 400px) {
+  .row-item-container-mobile p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .row-item-container-mobile p {
+    font-size: 12px;
+  }
+}
+
+/* ---------------------- COPY -------------------- */
+
+.collect-id-copy {
+  position: relative;
+  cursor: pointer;
+}
+
+.copy-collect-id-button {
+  display: none;
+  padding: 6px;
+  border: none;
+  outline: none;
+  background: none;
+  border-radius: 2px;
+  background: rgb(58, 58, 58);
+  cursor: pointer;
+}
+
+.copy-icon {
+  color: #ffffff;
+  width: 18px;
+  height: 18px;
+}
+
+.copied-text {
+  background: #000000;
+  color: #ffffff;
+  position: absolute;
+  top: -4px;
+  left: 0;
+  padding: 4px 8px;
+}
+
+.collect-id-copy:hover .copy-collect-id-button {
+  display: flex;
+  position: absolute;
+  top: -4px;
+  left: 0;
+}
+
+.mobile-ids {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-copied-text {
+  padding: 4px;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.copy-mobile-id-button {
+  display: none;
+  background: none;
+  outline: none;
+  border: none;
+  background: #000000;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.mobile-copy-icon {
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+}
+
+.mobile-ids:hover .copy-mobile-id-button {
+  display: flex;
+}
+
+/* ------------------ Theme ------------------- */
+.dark-item {
+  background:rgb(58, 58, 58);
+  color: rgb(255, 255, 255);
+}
+
+.light-item {
+  background: rgb(255, 255, 255);
+  color: rgb(31, 31, 31);
+}
+
+.row-item-container-mobile .dark-item-text {
+  color:rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+.row-item-container-mobile .light-item-text {
+  color:rgb(219, 219, 219);
+}
+
+.light-copied {
+  background: rgb(0, 0, 0);
+  color: rgb(253, 253, 253);
+}
+
+.dark-copied {
+  background: rgb(34, 34, 34);
+  color: rgb(255, 252, 252);
+}
