@@ -8,7 +8,11 @@ const checkStatus = require("../controllers/checkStatus.controller");
 const getTransactionDetails = require("../controllers/getTransactionDetails.controller");
 const statusUpdate = require("../controllers/statusUpdate.controller");
 const webHook = require("../controllers/webHookPayload.controller");
+const userSignup = require("../controllers/signup.controller");
+const userLogin = require("../controllers/login.controller");
 
+router.post("/signup", userSignup);
+router.post("/login", userLogin);
 router.get("/transactions", fetchAllTransactions);
 router.post("/add-transaction", setCollectRequests);
 router.post("/add-status", setCollectRequestStatuses);

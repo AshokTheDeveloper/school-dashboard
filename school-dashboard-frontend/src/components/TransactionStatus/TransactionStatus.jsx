@@ -3,6 +3,7 @@ import { IoIosSearch } from "react-icons/io";
 import "./TransactionStatus.css";
 import RowItem from "../RowItem/RowItem";
 import { dashboardContext } from "../../context/dashboardContext";
+import Header from "../Header/Header";
 
 const TransactionStatus = () => {
   const { theme, apiUrl } = useContext(dashboardContext);
@@ -75,23 +76,26 @@ const TransactionStatus = () => {
   );
 
   return (
-    <div className={`transaction-status-wrapper ${darkTheme}`}>
-      <div className={`transaction-status-container ${darkTheme}`}>
-        <h2>Check Transaction Status</h2>
-        <form onSubmit={onSubmitForm} className="transaction-status-form">
-          <input
-            type="text"
-            onChange={inputHandle}
-            value={searchInput}
-            placeholder="Search(Order ID)"
-          />
-          <button type="submit">
-            <IoIosSearch className="status-check-search-icon" />
-          </button>
-        </form>
+    <>
+      <Header />
+      <div className={`transaction-status-wrapper ${darkTheme}`}>
+        <div className={`transaction-status-container ${darkTheme}`}>
+          <h2>Check Transaction Status</h2>
+          <form onSubmit={onSubmitForm} className="transaction-status-form">
+            <input
+              type="text"
+              onChange={inputHandle}
+              value={searchInput}
+              placeholder="Search(Order ID)"
+            />
+            <button type="submit">
+              <IoIosSearch className="status-check-search-icon" />
+            </button>
+          </form>
+        </div>
+        {currentStatus.length > 0 ? renderStatusDetails() : renderNoResults()}
       </div>
-      {currentStatus.length > 0 ? renderStatusDetails() : renderNoResults()}
-    </div>
+    </>
   );
 };
 

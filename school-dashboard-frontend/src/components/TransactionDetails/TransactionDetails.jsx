@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import RowItem from "../RowItem/RowItem";
 import "./TransactionDetails.css";
 import { dashboardContext } from "../../context/dashboardContext";
+import Header from "../Header/Header";
 
 const TransactionDetails = () => {
   const { theme, apiUrl } = useContext(dashboardContext);
@@ -115,13 +116,16 @@ const TransactionDetails = () => {
   );
 
   return (
-    <div className={`transaction-details-wrapper ${darkTheme}`}>
-      <h2 className={`${themeText}`}>TransactionDetails</h2>
-      {renderDropdown()}
-      {transactionDetails && transactionDetails.length > 0
-        ? renderTransactionDetails()
-        : renderNoResults()}
-    </div>
+    <>
+      <Header />
+      <div className={`transaction-details-wrapper ${darkTheme}`}>
+        <h2 className={`${themeText}`}>TransactionDetails</h2>
+        {renderDropdown()}
+        {transactionDetails && transactionDetails.length > 0
+          ? renderTransactionDetails()
+          : renderNoResults()}
+      </div>
+    </>
   );
 };
 

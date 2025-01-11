@@ -1,8 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
+import Cookies from "js-cookie";
 import { IoSearch } from "react-icons/io5";
 import RowItem from "../RowItem/RowItem";
 import Pagination from "../Pagination/Pagination";
+import Header from "../Header/Header";
 import { dashboardContext } from "../../context/dashboardContext";
+
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -15,6 +19,11 @@ const Dashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchInput, setSearchInput] = useState("");
   const rowsPerPage = 10;
+
+  const jwtToken = Cookies.get("jwt_token");
+  if (jwtToken === undefined) {
+    return <Navigate to="/login" />;
+  }
 
   const themeBg = theme === "dark" ? "dark-theme" : "light-theme";
   const themeText = theme === "dark" ? "light-text" : "dark-text";
@@ -63,14 +72,10 @@ const Dashboard = () => {
 
     const start = new Date(startDate);
     const end = new Date(endDate);
-
-    const localStart = start.toLocaleDateString();
-    const localEnd = end.toLocaleDateString();
-
+    
     const filtered = transactionData.filter((doc) => {
       const createdAt = new Date(doc.createdAt);
-      const localDate = createdAt.toLocaleDateString();
-      return localDate >= localStart && localDate <= localEnd;
+      return createdAt >= start && createdAt <= end;
     });
     setFilteredDocs(filtered);
   };
@@ -192,9 +197,12 @@ const Dashboard = () => {
   );
 
   return (
-    <div className={`dash-board-bg-wrapper ${themeBg}`}>
-      {renderDashboardTopSection()} {renderDashboardTable()}
-    </div>
+    <>
+      <Header />
+      <div className={`dash-board-bg-wrapper ${themeBg}`}>
+        {renderDashboardTopSection()} {renderDashboardTable()}
+      </div>
+    </>
   );
 };
 

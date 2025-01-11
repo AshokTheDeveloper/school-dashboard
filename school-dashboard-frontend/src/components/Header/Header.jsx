@@ -1,17 +1,26 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import Cookies from "js-cookie";
+import { Link, useNavigate } from "react-router-dom";
 import { IoIosSunny, IoIosMoon } from "react-icons/io";
+import { MdLogout } from "react-icons/md";
 import { dashboardContext } from "../../context/dashboardContext";
 import "./Header.css";
 
 const Header = () => {
+  const navigate = useNavigate();
   const { theme, toggleTheme } = useContext(dashboardContext);
 
   const toggleThemeHandle = () => {
     toggleTheme();
   };
 
-  const darkTheme = theme === "dark" ? "dark-theme-header" : "light-theme-header";
+  const onLogoutHandle = () => {
+    Cookies.remove("jwt_token");
+    navigate("/login");
+  };
+
+  const darkTheme =
+    theme === "dark" ? "dark-theme-header" : "light-theme-header";
   const themeText = theme === "dark" ? "light-text" : "dark-text";
 
   return (
@@ -48,6 +57,12 @@ const Header = () => {
           >
             Status Check
           </Link>
+          <button
+            onClick={onLogoutHandle}
+            className={`header-links logout-button ${themeText}`}
+          >
+            <MdLogout className="logout-icon" />
+          </button>
         </div>
       </nav>
     </header>

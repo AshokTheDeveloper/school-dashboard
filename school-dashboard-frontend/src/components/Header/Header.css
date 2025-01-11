@@ -26,20 +26,19 @@
 
 .header-links {
   text-decoration: none;
-  color:rgb(46, 46, 46);
+  color: rgb(46, 46, 46);
   font-size: 16px;
   font-weight: 600;
   font-family: "Arial";
 }
 
-
 @media (max-width: 768px) {
   .header-links-container {
-    gap: 14px;
+    gap: 8px;
   }
 
   .header-links {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
   }
 }
@@ -62,11 +61,22 @@
   height: 26px;
 }
 
+.logout-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.logout-button .logout-icon {
+  width: 22px;
+  height: 22px;
+}
 
 /* ----------- Theme ------------ */
 
 .dark-theme-header {
-  background:rgb(54, 54, 54);
+  background: rgb(54, 54, 54);
   color: rgb(255, 255, 255);
 }
 
