@@ -158,7 +158,7 @@ The User Login API allows registered users to authenticate and receive a secure 
 - **CollectRequestStatus**: Primary collection containing transaction statuses.
  
 **Fields in Response:**
-- **collect_id, school_id, gateway, order_amount, transaction_amount, status, custom_order_id, and createdAt**.
+- `collect_id`, `school_id`, `gateway`, `order_amount`, `transaction_amount`, `status`, `custom_order_id`, and `createdAt`.
 ---------------------
 ### 4. Get Transaction Details API
 The **Get Transaction Details API** retrieves detailed transaction information for a specific school using the provided school ID.
