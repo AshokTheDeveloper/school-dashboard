@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 import { IoIosSearch } from "react-icons/io";
 import RowItem from "../RowItem/RowItem";
 import { dashboardContext } from "../../context/dashboardContext";
@@ -21,11 +22,16 @@ const TransactionStatus = () => {
       return;
     }
 
+    const jwtToken = Cookies.get("jwt_token");
     const url = `${apiUrl}/school-dashboard/check-status/${searchInput}`;
     setSearchInput("");
 
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${jwtToken}`,
+        },
+      });
       const data = await response.data;
       setCurrentStatus(data.transaction);
     } catch (error) {

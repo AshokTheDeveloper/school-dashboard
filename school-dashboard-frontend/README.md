@@ -1,4 +1,7 @@
-# React App with Context and Routing
+# School Payment Dashboard application React
+
+This repository contains the backend code for the School Payment and Dashboard Application.
+
 
 This is a basic React application setup that uses **Context API** for state management and **React Router** for routing. It also integrates with `StrictMode` to highlight potential issues in the application during development.
 
