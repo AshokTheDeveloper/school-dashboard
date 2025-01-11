@@ -34,6 +34,8 @@ This React application includes various pages such as **Signup**, **Login**, **D
 
 The `Signup` component provides the user interface for signing up a new user. It allows users to input their username, email, and password, and then submit this information to create a new account. If the submission is successful, the user is redirected to the login page. If there are any issues with the submission, an error message is displayed.
 
+![App Screenshot](./src/assets/Screenshot%20(4).png)
+
 ## Features
 
 ### Form Fields
@@ -91,6 +93,8 @@ import Signup from './components/Signup/Signup';
 # 2. Login Component
 
 The `Login` component provides the user interface for logging into the dashboard. It allows users to input their email and password and submit the credentials to authenticate the user. Upon successful login, a JWT token is saved in cookies and the user is redirected to the dashboard. If there are any issues with the login attempt, an error message is displayed.
+
+![App Screenshot](./src/assets/Screenshot%20(5).png)
 
 ## Features
 
@@ -205,6 +209,11 @@ import Header from './components/Header/Header';
 
 The `Dashboard` component is a central page for managing and displaying transactions for a school dashboard. It includes a table that lists transactions with options for filtering, searching, and pagination. Users can filter transactions by status, search by order ID, and specify a date range for the transactions.
 
+**Light Mode**
+![App Screenshot](./src/assets/Screenshot%20(6).png)
+
+**Dark Mode**
+![App Screenshot](./src/assets/Screenshot%20(7).png)
 ## Features
 
 ### Search
@@ -269,6 +278,9 @@ import Dashboard from './components/Dashboard/Dashboard';
 
 The `Pagination` component provides a paginated interface to navigate through a list of items, such as rows in a table. It takes in the current page and total pages and allows the user to click on page numbers to navigate between different pages.
 
+**Pagination**
+![App Screenshot](./src/assets/Screenshot%20(8).png)
+
 ## Features
 
 ### Page Navigation
@@ -312,6 +324,19 @@ import Pagination from './components/Pagination/Pagination';
 # 6. TransactionDetails Component
 
 The `TransactionDetails` component displays transaction information for different schools. It allows users to filter transactions based on school ID and view detailed data about specific transactions.
+
+**Light Mode**
+![App Screenshot](./src/assets/Screenshot%20(14).png)
+
+**Dark Mode**
+![App Screenshot](./src/assets/Screenshot%20(15).png)
+
+**Drop Down**
+![App Screenshot](./src/assets/Screenshot%20(16).png)
+
+**School Details By School ID**
+![App Screenshot](./src/assets/Screenshot%20(17).png)
+
 
 ## Features
 
@@ -357,6 +382,13 @@ import TransactionDetails from './components/TransactionDetails/TransactionDetai
 # 7. TransactionStatus Component
 
 The `TransactionStatus` component allows users to check the status of transactions based on a search query (Order ID). It fetches transaction data from an API and displays the status information in a table format.
+
+**Dark Mode**
+![App Screenshot](./src/assets/Screenshot%20(18).png)
+
+**Light Mode**
+![App Screenshot](./src/assets/Screenshot%20(25).png)
+
 
 ## Features
 
@@ -482,3 +514,76 @@ const ThemeToggler = () => {
 
 export default ThemeToggler;
 ```
+
+
+# Screenshots of Pages
+
+**Signup Page**
+![App Screenshot](./src/assets/Screenshot%20(4).png)
+
+**Login Page**
+![App Screenshot](./src/assets/Screenshot%20(5).png)
+
+**Dashboard Home Page** (Light Mode)
+![App Screenshot](./src/assets/Screenshot%20(6).png)
+
+
+**Dashboard Home Page** (Dark Mode)
+![App Screenshot](./src/assets/Screenshot%20(7).png)
+
+**Dashboard Search results by dropdown filter (Success)**
+![App Screenshot](./src/assets/Screenshot%20(8).png)
+
+**Dashboard Search result by dropdown filter (Pending)**
+![App Screenshot](./src/assets/Screenshot%20(9).png)
+
+**Dashboard Search results by dropdown filter (Failure)**
+![App Screenshot](./src/assets/Screenshot%20(10).png)
+
+**Dashboard Date range**
+![App Screenshot](./src/assets/Screenshot%20(11).png)
+
+**Specific School details** (Light Mode)
+![App Screenshot](./src/assets/Screenshot%20(14).png)
+
+**Specific School Details** (Dark Mode)
+![App Screenshot](./src/assets/Screenshot%20(15).png)
+
+**Specific School Details Dropdown**
+![App Screenshot](./src/assets/Screenshot%20(16).png)
+
+**Specific School Details**
+![App Screenshot](./src/assets/Screenshot%20(17).png)
+
+
+**Transaction status by Order ID** (Dark Mode)
+![App Screenshot](./src/assets/Screenshot%20(18).png)
+
+**Transaction status by Order ID** (Light Mode)
+![App Screenshot](./src/assets/Screenshot%20(19).png)
+
+**Transaction status by Order ID**
+![App Screenshot](./src/assets/Screenshot%20(25).png)
+
+## Pages for Smaller Screens
+![App Screenshot](./src/assets/Screenshot%20(29).png)
+
+![App Screenshot](./src/assets/Screenshot%20(30).png)
+
+![App Screenshot](./src/assets/Screenshot%20(31).png)
+
+![App Screenshot](./src/assets/Screenshot%20(32).png)
+
+![App Screenshot](./src/assets/Screenshot%20(33).png)
+
+![App Screenshot](./src/assets/Screenshot%20(34).png)
+
+![App Screenshot](./src/assets/Screenshot%20(36).png)
+
+![App Screenshot](./src/assets/Screenshot%20(37).png)
+
+![App Screenshot](./src/assets/Screenshot%20(38).png)
+
+![App Screenshot](./src/assets/Screenshot%20(39).png)
+
+![App Screenshot](./src/assets/Screenshot%20(40).png)
