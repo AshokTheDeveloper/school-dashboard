@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import Cookies from "js-cookie";
 import axios from "axios";
 import RowItem from "../RowItem/RowItem";
 import { dashboardContext } from "../../context/dashboardContext";
@@ -43,17 +44,27 @@ const TransactionDetails = () => {
   };
 
   const getTransactions = async () => {
+    const jwtToken = Cookies.get("jwt_token");
     const url = `${apiUrl}/school-dashboard/transactions`;
 
-    const response = await axios.get(url);
+    const response = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+      },
+    });
     const data = await response.data;
     setTransactions(data.transactions);
   };
 
   const getTransactionDetails = async () => {
+    const jwtToken = Cookies.get("jwt_token");
     const url = `${apiUrl}/school-dashboard/transaction-details/${currentId}`;
 
-    const response = await axios.get(url);
+    const response = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+      },
+    });
     const data = await response.data;
     setTransactionDetails(data.transaction);
   };

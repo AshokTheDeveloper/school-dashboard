@@ -38,6 +38,17 @@
   }
 
   .header-links {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-links-container {
+    gap: 10px;
+  }
+
+  .header-links {
     font-size: 12px;
     font-weight: 600;
   }
@@ -101,9 +112,9 @@
 }
 
 .light-button {
-  background: #ffffff;
+  background:rgb(175, 175, 175);
 }
 
 .dark-button {
-  background: #272727;
+  background:rgb(54, 54, 54);
 }

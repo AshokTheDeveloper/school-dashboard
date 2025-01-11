@@ -10,15 +10,16 @@ const statusUpdate = require("../controllers/statusUpdate.controller");
 const webHook = require("../controllers/webHookPayload.controller");
 const userSignup = require("../controllers/signup.controller");
 const userLogin = require("../controllers/login.controller");
+const authenticateUser = require("../middleware/authMiddleware");
 
 router.post("/signup", userSignup);
 router.post("/login", userLogin);
-router.get("/transactions", fetchAllTransactions);
-router.post("/add-transaction", setCollectRequests);
-router.post("/add-status", setCollectRequestStatuses);
-router.get("/check-status/:orderId", checkStatus);
-router.get("/transaction-details/:schoolId", getTransactionDetails);
-router.post("/status-update", statusUpdate);
-router.post("/webhook", webHook);
+router.get("/transactions", authenticateUser, fetchAllTransactions);
+router.post("/add-transaction", authenticateUser, setCollectRequests);
+router.post("/add-status", authenticateUser, setCollectRequestStatuses);
+router.get("/check-status/:orderId", authenticateUser, checkStatus);
+router.get("/transaction-details/:schoolId",authenticateUser,getTransactionDetails);
+router.post("/status-update", authenticateUser, statusUpdate);
+router.post("/webhook", authenticateUser, webHook);
 
 module.exports = router;

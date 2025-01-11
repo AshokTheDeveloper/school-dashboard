@@ -86,9 +86,14 @@ const Dashboard = () => {
   };
 
   const initiateAllTransactionsApi = async () => {
+    const jwtToken = Cookies.get("jwt_token");
     const url = `${apiUrl}/school-dashboard/transactions`;
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${jwtToken}`,
+        },
+      });
       const data = response.data;
       setTransactionData(data.transactions);
     } catch (error) {

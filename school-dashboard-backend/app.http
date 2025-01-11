@@ -1,4 +1,6 @@
 GET http://localhost:3009/school-dashboard/transactions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODIwZmQ0ZGFjMmE1ODY2N2Q4MDY5MiIsImlhdCI6MTczNjU5MDg3MSwiZXhwIjoxNzM3MTk1NjcxfQ.kN72NK02R1EW9BGrJ_P_cEggfYTF7VbKtzxdPHpG0ag
+
 
 
 ###
@@ -29,8 +31,8 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3009/school-dashboard/check-status/123456789
-
+GET http://localhost:3009/school-dashboard/check-status/test2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODIwZmQ0ZGFjMmE1ODY2N2Q4MDY5MiIsImlhdCI6MTczNjU5MDg3MSwiZXhwIjoxNzM3MTk1NjcxfQ.kN72NK02R1EW9BGrJ_P_cEggfYTF7VbKtzxdPHpG0ag
 
 ###
 POST http://localhost:3009/school-dashboard/signup
@@ -48,6 +50,6 @@ POST http://localhost:3009/school-dashboard/login
 Content-Type: application/json
 
 {
-      "email": "jesus@gmail.com",
+      "email": "king@gmail.com",
       "password": "123456"
 }
