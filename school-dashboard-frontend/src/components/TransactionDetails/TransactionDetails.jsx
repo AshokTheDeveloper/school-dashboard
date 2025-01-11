@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
+import axios from "axios";
 import RowItem from "../RowItem/RowItem";
-import "./TransactionDetails.css";
 import { dashboardContext } from "../../context/dashboardContext";
 import Header from "../Header/Header";
+import "./TransactionDetails.css";
 
 const TransactionDetails = () => {
   const { theme, apiUrl } = useContext(dashboardContext);
@@ -43,28 +44,18 @@ const TransactionDetails = () => {
 
   const getTransactions = async () => {
     const url = `${apiUrl}/school-dashboard/transactions`;
-    const options = {
-      method: "GET",
-    };
 
-    const response = await fetch(url, options);
-    const data = await response.json();
-    if (response.ok) {
-      setTransactions(data.transactions);
-    }
+    const response = await axios.get(url);
+    const data = await response.data;
+    setTransactions(data.transactions);
   };
 
   const getTransactionDetails = async () => {
     const url = `${apiUrl}/school-dashboard/transaction-details/${currentId}`;
-    const options = {
-      method: "GET",
-    };
 
-    const response = await fetch(url, options);
-    const data = await response.json();
-    if (response.ok) {
-      setTransactionDetails(data.transaction);
-    }
+    const response = await axios.get(url);
+    const data = await response.data;
+    setTransactionDetails(data.transaction);
   };
 
   const renderDropdown = () => (

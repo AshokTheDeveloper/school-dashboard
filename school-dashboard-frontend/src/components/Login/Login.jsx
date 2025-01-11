@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
 import Cookies from "js-cookie";
+import axios from "axios";
+
 import { dashboardContext } from "../../context/dashboardContext";
 import "./Login.css";
 
@@ -44,28 +46,26 @@ const Login = () => {
       password,
     };
 
-    const url = `${apiUrl}/school-dashboard/login`;
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    };
-
     setEmail("");
     setPassword("");
-
+    const url = `${apiUrl}/school-dashboard/login`;
     try {
-      const response = await fetch(url, options);
-      const data = await response.json();
-      if (response.ok) {
-        onLoginSuccess(data.jwt_token);
-      } else {
-        onLoginFailure(data.message);
-      }
+      const response = await axios.post(url, user, {
+        "Content-Type": "application/json",
+      });
+
+      const data = await response.data;
+      onLoginSuccess(data.jwt_token);
     } catch (error) {
-      console.log("Response Error: ", error.message);
+      if (error.response) {
+        onLoginFailure(response.data.message);
+      } else if (error.request) {
+        console.log("No Response: ", error.request);
+        onSubmitFailure("No response from server");
+      } else {
+        console.log("Error: ", error.message);
+        onSubmitFailure("An error occurred");
+      }
     }
   };
 

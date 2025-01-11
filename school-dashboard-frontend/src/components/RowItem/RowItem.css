@@ -151,7 +151,7 @@
   display: flex;
   position: absolute;
   top: -4px;
-  left: 0;
+  right: 10px;
 }
 
 .mobile-ids {
@@ -162,7 +162,7 @@
 
 .mobile-copied-text {
   padding: 4px;
-  margin-left: 8px;
+  margin-left: 4px;
   font-size: 14px;
 }
 
@@ -188,7 +188,7 @@
 
 /* ------------------ Theme ------------------- */
 .dark-item {
-  background:rgb(58, 58, 58);
+  background: rgb(58, 58, 58);
   color: rgb(255, 255, 255);
 }
 
@@ -198,12 +198,12 @@
 }
 
 .row-item-container-mobile .dark-item-text {
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   font-weight: 600;
 }
 
 .row-item-container-mobile .light-item-text {
-  color:rgb(219, 219, 219);
+  color: rgb(219, 219, 219);
 }
 
 .light-copied {

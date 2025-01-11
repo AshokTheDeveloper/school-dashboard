@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
 import Cookies from "js-cookie";
+import axios from "axios";
 import { dashboardContext } from "../../context/dashboardContext";
 import "./Signup.css";
 
@@ -50,25 +51,25 @@ const Signup = () => {
       password,
     };
 
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    };
-
     try {
-      const response = await fetch(url, options);
-      const data = await response.json();
-      if (response.ok) {
-        console.log("Data: ", data);
-        onSubmitSuccess();
-      } else {
-        onSubmitFailure();
-      }
+      const response = await axios.post(url, user, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const data = await response.data;
+      onSubmitSuccess();
     } catch (error) {
-      console.log("Response error: ", error);
+      if (error.response) {
+        onSubmitFailure(error.response.data.message || "An error occurred");
+      } else if (error.request) {
+        console.log("No Response: ", error.request);
+        onSubmitFailure("No response from server");
+      } else {
+        console.log("Error: ", error.message);
+        onSubmitFailure("An error occurred");
+      }
     }
   };
 

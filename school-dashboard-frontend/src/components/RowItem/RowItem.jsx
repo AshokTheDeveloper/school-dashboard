@@ -82,7 +82,19 @@ const RowItem = (props) => {
         >
           {status}
         </p>
-        <p>{custom_order_id}</p>
+        <p className="collect-id-copy">
+          {custom_order_id}
+          {copiedId === custom_order_id ? (
+            <span className="copied-text">Copied!</span>
+          ) : (
+            <button
+              onClick={() => copyToClipboard(custom_order_id)}
+              className="copy-collect-id-button"
+            >
+              <MdOutlineContentCopy className="copy-icon" />
+            </button>
+          )}
+        </p>
       </div>
       <div className={`row-item-container-mobile ${themeBg}`}>
         <p>
@@ -139,9 +151,19 @@ const RowItem = (props) => {
         >
           <span className={`${themeText}`}>Status: </span> {status}
         </p>
-        <p>
+        <p className="mobile-ids">
           <span className={`${themeText}`}>Custom order ID: </span>
           {custom_order_id}
+          {copiedId === custom_order_id ? (
+            <span className={`mobile-copied-text ${themeBg}`}>Copied!</span>
+          ) : (
+            <button
+              onClick={() => copyToClipboard(custom_order_id)}
+              className="copy-mobile-id-button"
+            >
+              <MdOutlineContentCopy className="mobile-copy-icon" />
+            </button>
+          )}
         </p>
       </div>
     </>

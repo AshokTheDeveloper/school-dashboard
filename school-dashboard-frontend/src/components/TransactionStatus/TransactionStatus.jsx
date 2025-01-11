@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
+import axios from "axios";
 import { IoIosSearch } from "react-icons/io";
-import "./TransactionStatus.css";
 import RowItem from "../RowItem/RowItem";
 import { dashboardContext } from "../../context/dashboardContext";
 import Header from "../Header/Header";
+import "./TransactionStatus.css";
 
 const TransactionStatus = () => {
   const { theme, apiUrl } = useContext(dashboardContext);
@@ -21,18 +22,12 @@ const TransactionStatus = () => {
     }
 
     const url = `${apiUrl}/school-dashboard/check-status/${searchInput}`;
-    const options = {
-      method: "GET",
-    };
-
     setSearchInput("");
 
     try {
-      const response = await fetch(url, options);
-      const data = await response.json();
-      if (response.ok) {
-        setCurrentStatus(data.transaction);
-      }
+      const response = await axios.get(url);
+      const data = await response.data;
+      setCurrentStatus(data.transaction);
     } catch (error) {
       console.log("Response error: ", error.message);
     }

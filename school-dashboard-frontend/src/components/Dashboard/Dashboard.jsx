@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import axios from "axios";
 import { IoSearch } from "react-icons/io5";
 import RowItem from "../RowItem/RowItem";
 import Pagination from "../Pagination/Pagination";
@@ -72,7 +73,7 @@ const Dashboard = () => {
 
     const start = new Date(startDate);
     const end = new Date(endDate);
-    
+
     const filtered = transactionData.filter((doc) => {
       const createdAt = new Date(doc.createdAt);
       return createdAt >= start && createdAt <= end;
@@ -86,14 +87,12 @@ const Dashboard = () => {
 
   const initiateAllTransactionsApi = async () => {
     const url = `${apiUrl}/school-dashboard/transactions`;
-    const options = {
-      method: "GET",
-    };
-
-    const response = await fetch(url, options);
-    const data = await response.json();
-    if (response.ok) {
+    try {
+      const response = await axios.get(url);
+      const data = response.data;
       setTransactionData(data.transactions);
+    } catch (error) {
+      console.log("Response error: ", error);
     }
   };
 

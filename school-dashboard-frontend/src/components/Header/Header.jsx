@@ -22,6 +22,7 @@ const Header = () => {
   const darkTheme =
     theme === "dark" ? "dark-theme-header" : "light-theme-header";
   const themeText = theme === "dark" ? "light-text" : "dark-text";
+  const themeButton = theme === 'dark' ? 'light-button': 'dark-button'
 
   return (
     <header className={`header-container ${darkTheme}`}>
@@ -30,19 +31,19 @@ const Header = () => {
           Dashboard
         </Link>
         <div className="header-links-container">
-          {theme ? (
+          {theme === "dark" ? (
             <button
               onClick={toggleThemeHandle}
-              className={`theme-button ${darkTheme}`}
+              className={`theme-button ${themeButton}`}
             >
-              <IoIosSunny className="theme-icons" />
+              <IoIosSunny className="theme-icon-light" />
             </button>
           ) : (
             <button
               onClick={toggleThemeHandle}
-              className={`theme-button ${darkTheme}`}
+              className={`theme-button ${themeButton}`}
             >
-              <IoIosMoon className="theme-icons" />
+              <IoIosMoon className="theme-icon-dark" />
             </button>
           )}
           <Link
@@ -55,7 +56,7 @@ const Header = () => {
             to="/transaction-status"
             className={`header-links ${themeText}`}
           >
-            Status Check
+            CheckStatus
           </Link>
           <button
             onClick={onLogoutHandle}
