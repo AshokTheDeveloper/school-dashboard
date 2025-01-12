@@ -14,7 +14,6 @@ export const ContextProvider = (props) => {
   };
 
   const apiUrl = "https://school-dashboard-0trr.onrender.com";
-
   const value = {
     toggleTheme,
     theme,
