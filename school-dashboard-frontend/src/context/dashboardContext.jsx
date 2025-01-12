@@ -13,7 +13,7 @@ export const ContextProvider = (props) => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
-  const apiUrl = "http://localhost:3009";
+  const apiUrl = "https://school-dashboard-0trr.onrender.com";
 
   const value = {
     toggleTheme,
